@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     ToLogin: {
         width: '40%',
-        height: 40,
+        height: 45,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#800000',

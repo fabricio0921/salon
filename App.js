@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './src/pages/Login'
 import Home from './src/pages/Home'
+import Horarios from './src/pages/Horarios'
 
 
 
@@ -11,6 +12,7 @@ const AppNavigator = createStackNavigator(
   {
     Login: Login,
     Home: Home,
+    Horarios: Horarios
   },
   {
     headerMode: 'none',

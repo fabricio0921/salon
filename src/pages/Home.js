@@ -16,34 +16,90 @@ export default class Home extends Component {
 
                 </View>
                 <View style={styles.Baixo}>
+
                     <View style={styles.Avaliacao}>
                         <Icon
                             name='star'
                             type='evilicon'
-                            color='blue'
+                            color='#f50'
+                            size={40}
+                            marginTop={10}
+
+                        />
+                        <Icon
+                            name='star'
+                            type='evilicon'
+                            color='#f50'
                             size={40}
                             marginTop={10}
                         />
                         <Icon
                             name='star'
                             type='evilicon'
-                            color='blue'
+                            color='#f50'
                             size={40}
                             marginTop={10}
                         />
                         <Icon
                             name='star'
                             type='evilicon'
-                            color='blue'
+                            color='#f50'
+                            size={40}
+                            marginTop={10}
+                        />
+                        <Icon
+                            name='star'
+                            type='evilicon'
+                            color='#f50'
                             size={40}
                             marginTop={10}
                         />
 
                     </View>
                     <View style={styles.Localizacao}>
-                        <Text>Passagem do arame, 25</Text>
-                        <Text>9858-4848</Text>
-                        <Text>whatsApp: 9848-4058</Text>
+                        <View style={styles.LocalizacaoEndereco}>
+                            <Icon
+                                name='marker'
+                                type='foundation'
+                                color='#f50'
+                                justifyContent='center'
+                                size={30}
+
+                                padding={10}
+                            />
+                            <Text style={styles.TxtLocalizacao}>Passagem do arame, 25</Text>
+
+
+                        </View>
+
+                        <View style={styles.LocalizacaoTelefone}>
+                            <Icon
+                                name='telephone'
+                                type='foundation'
+                                color='#f50'
+                                justifyContent='center'
+                                size={30}
+
+                                padding={10}
+                            />
+                            <Text style={styles.TxtLocalizacao}>9858-4848</Text>
+
+                        </View>
+                        <View style={styles.LocalizacaoWhatsApp}>
+                            <Icon
+                                name='telephone'
+                                type='foundation'
+                                justifyContent='center'
+                                color='#f50'
+                                size={30}
+
+                                padding={10}
+                            />
+                            <Text style={styles.TxtLocalizacao}>9848-4058 (WhatsApp)</Text>
+
+                        </View>
+
+
 
                     </View>
                     <View style={styles.Servicos}>
@@ -52,8 +108,8 @@ export default class Home extends Component {
                         <Text>Manicure</Text>
 
                     </View>
-                    <TouchableOpacity style={styles.ToMarcarHorario}>
-                        <Text>Marcar Horário</Text>
+                    <TouchableOpacity style={styles.ToMarcarHorario} onPress={() => this.props.navigation.navigate('Horarios')}>
+                        <Text style={styles.TotxtMarcarHorario}>Marcar Horário</Text>
                     </TouchableOpacity>
 
 
@@ -93,32 +149,81 @@ const styles = StyleSheet.create({
     Localizacao: {
         width: '98%',
         height: '25%',
-        borderWidth: 1,
+
+
         borderColor: 'grey',
         alignSelf: 'center',
         borderRadius: 3,
-        marginTop: 5
+        marginTop: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 1,
+
+
+    },
+    LocalizacaoEndereco: {
+        width: '95%',
+        height: '33%',
+        flexDirection: 'row',
+
+    },
+    LocalizacaoTelefone: {
+        width: '95%',
+        height: '33%',
+        flexDirection: 'row'
+    },
+    LocalizacaoWhatsApp: {
+        width: '95%',
+        height: '33%',
+        flexDirection: 'row'
+
+    },
+    TxtLocalizacao: {
+        padding: 10,
+        justifyContent: 'center'
 
     },
     Servicos: {
         width: '98%',
         height: '30%',
 
-        borderWidth: 1,
+
         borderColor: 'grey',
         alignSelf: 'center',
         borderRadius: 3,
-        marginTop: 5
+        marginTop: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 1,
+
 
     },
     ToMarcarHorario: {
         width: '50%',
-        height: 40,
+        height: 45,
         backgroundColor: '#800000',
         borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
         alignSelf: 'center',
         marginTop: 10
-    }
+    },
+    TotxtMarcarHorario: {
+        color: '#FFA500',
+        fontWeight: 'bold'
+    },
 
 
 
