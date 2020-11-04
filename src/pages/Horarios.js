@@ -17,7 +17,8 @@ export default class Horarios extends Component {
             city: null,
             cities: [],
             data: '',
-            toggleValue: false
+            toggleValue: false,
+
         };
     }
     changeDate = (valor) => {
