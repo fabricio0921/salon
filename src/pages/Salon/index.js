@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Calendar } from 'react-native-calendars';
 
 
 
@@ -21,35 +22,53 @@ const Salon = () => {
           />
         </View>
       </View>
+
       <View style={styles.choosesCalendar}>
         <View style={styles.txtCalendar}>
           <Text style={styles.txtService}>Escolha seu Serviço</Text>
         </View>
-        <ScrollView style={styles.services} horizontal={true}>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}>
-            <Text>Ola</Text>
-          </TouchableOpacity>
+        <ScrollView style={styles.serviceScrowview} horizontal>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+
         </ScrollView>
+        <Calendar
+          // Initially visible month. Default = Date()
+          current={'2012-03-01'}
+          // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
+          minDate={'2012-05-10'}
+          // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
+          maxDate={'2012-05-30'}
+          // Handler which gets executed on day press. Default = undefined
+          onDayPress={day => {
+            console.log('selected day', day);
+          }}
+          // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+          monthFormat={'yyyy MM'}
+          // Handler which gets executed when visible month changes in calendar. Default = undefined
+          onMonthChange={month => {
+            console.log('month changed', month);
+          }}
+          // Hide month navigation arrows. Default = false
+          hideArrows={true}
+          // Do not show days of other months in month page. Default = false
+          hideExtraDays={true}
+          // If hideArrows=false and hideExtraDays=false do not swich month when tapping on greyed out
+          // day from another month that is visible in calendar page. Default = false
+          disableMonthChange={true}
+          // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
+          firstDay={1}
+        />
       </View>
-      <View style={styles.otherInformations}></View>
+
+
+      <View style={styles.otherInformations}>
+        <TouchableOpacity style={styles.btMark}><Text>Marcar</Text></TouchableOpacity>
+      </View>
 
     </View>
   );
@@ -63,7 +82,7 @@ const styles = StyleSheet.create({
   },
   userInformations: {
     width: "95%",
-    
+
     height: "33%",
     marginTop: 5,
     flexDirection: "row",
@@ -72,40 +91,62 @@ const styles = StyleSheet.create({
   },
   choosesCalendar: {
     width: "95%",
+    borderColor: 'white',
     
-    height: "43%",
+    height: "50%",
     marginTop: 5,
-    
+
 
   },
   txtCalendar: {
     width: "100%",
-    
+
     height: "10%",
   },
-  txtService:{
-    fontSize:20,
+  txtService: {
+    fontSize: 20,
+
+  },
+  serviceScrowview: {
+    borderColor: 'red',
     
+    flexGrow: 0
   },
-  services:{
+  services: {
     width: "100%",
- 
-    height:'10%'
-  
+
+    borderWidth: 1,
+
+    height: 10,
+    borderColor: 'white'
+
   },
-  btServices:{
-    width:50,
-    height:"20%",
-    borderWidth:1,
-    margin:5,
-    borderRadius:5
+  btServices: {
+    width: 50,
+    height: 50,
+    borderWidth: 1,
+    margin: 5,
+    borderRadius: 5
   },
+
   otherInformations: {
     width: "95%",
     borderWidth: 1,
-    height: "20%",
+    height: "15%",
     marginTop: 5,
-    flexDirection: "row",
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  btMark:{
+    width: 200,
+    height: "40%",
+    borderWidth: 1,
+    borderColor: 'white',
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: "white",
+    borderRadius: 25,
   },
 
   Nome: {
