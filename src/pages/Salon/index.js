@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { Calendar } from 'react-native-calendars';
+import AppCalendar from '../../components/Calendar';
+
 
 
 
@@ -28,7 +29,12 @@ const Salon = () => {
           <Text style={styles.txtService}>Escolha seu Serviço</Text>
         </View>
         <ScrollView style={styles.serviceScrowview} horizontal>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.FotoPerfil}
+            source={{
+              uri: 'http://pm1.narvii.com/8099/464ed95fa2b771db691b5ab495dd6b3ccc784cb7',
+            }}
+          /></TouchableOpacity>
           <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
           <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
           <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
@@ -36,33 +42,8 @@ const Salon = () => {
           <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
 
         </ScrollView>
-        <Calendar
-          // Initially visible month. Default = Date()
-          current={'2012-03-01'}
-          // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-          minDate={'2012-05-10'}
-          // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-          maxDate={'2012-05-30'}
-          // Handler which gets executed on day press. Default = undefined
-          onDayPress={day => {
-            console.log('selected day', day);
-          }}
-          // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-          monthFormat={'yyyy MM'}
-          // Handler which gets executed when visible month changes in calendar. Default = undefined
-          onMonthChange={month => {
-            console.log('month changed', month);
-          }}
-          // Hide month navigation arrows. Default = false
-          hideArrows={true}
-          // Do not show days of other months in month page. Default = false
-          hideExtraDays={true}
-          // If hideArrows=false and hideExtraDays=false do not swich month when tapping on greyed out
-          // day from another month that is visible in calendar page. Default = false
-          disableMonthChange={true}
-          // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-          firstDay={1}
-        />
+        <AppCalendar/>
+        
       </View>
 
 
@@ -83,7 +64,7 @@ const styles = StyleSheet.create({
   userInformations: {
     width: "95%",
 
-    height: "33%",
+    height: "28%",
     marginTop: 5,
     flexDirection: "row",
 
@@ -91,10 +72,11 @@ const styles = StyleSheet.create({
   },
   choosesCalendar: {
     width: "95%",
-    borderColor: 'white',
     
-    height: "50%",
+    
+    height: "60%",
     marginTop: 5,
+
 
 
   },
@@ -131,15 +113,15 @@ const styles = StyleSheet.create({
 
   otherInformations: {
     width: "95%",
-    borderWidth: 1,
-    height: "15%",
+    
+    height: "10%",
     marginTop: 5,
     justifyContent:'center',
     alignItems:'center'
   },
   btMark:{
     width: 200,
-    height: "40%",
+    height: "60%",
     borderWidth: 1,
     borderColor: 'white',
 
