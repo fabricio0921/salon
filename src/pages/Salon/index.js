@@ -30,16 +30,29 @@ const Salon = () => {
         </View>
         <ScrollView style={styles.serviceScrowview} horizontal>
           <TouchableOpacity style={styles.btServices}><Image
-            style={styles.FotoPerfil}
-            source={{
-              uri: 'http://pm1.narvii.com/8099/464ed95fa2b771db691b5ab495dd6b3ccc784cb7',
-            }}
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
           /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Text>Botao</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.btServices}><Image
+            style={styles.logoBtServices}
+            source={require('../../assets/manicure.png')}
+          /></TouchableOpacity>
 
         </ScrollView>
         <AppCalendar/>
@@ -64,15 +77,14 @@ const styles = StyleSheet.create({
   userInformations: {
     width: "95%",
 
-    height: "28%",
+    height: "20%",
     marginTop: 5,
     flexDirection: "row",
 
 
   },
   choosesCalendar: {
-    width: "95%",
-    
+    width: "95%",   
     
     height: "60%",
     marginTop: 5,
@@ -108,7 +120,12 @@ const styles = StyleSheet.create({
     height: 50,
     borderWidth: 1,
     margin: 5,
-    borderRadius: 5
+    borderRadius: 5,
+    backgroundColor:'white'
+  },
+  logoBtServices:{
+    width:45,
+    height:45
   },
 
   otherInformations: {
