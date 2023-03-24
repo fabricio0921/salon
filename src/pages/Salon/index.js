@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import AppCalendar from '../../components/Calendar';
+import Hour from '../../components/Hour';
+
 
 
 
@@ -9,7 +11,9 @@ import AppCalendar from '../../components/Calendar';
 
 const Salon = () => {
   return (
+
     <View style={styles.container}>
+       
       <View style={styles.userInformations}>
         <View style={styles.Nome}>
           <Text style={styles.TxtNome}>Olá, Fabrício </Text>
@@ -56,6 +60,7 @@ const Salon = () => {
 
         </ScrollView>
         <AppCalendar/>
+        <Hour/>
         
       </View>
 
@@ -63,21 +68,21 @@ const Salon = () => {
       <View style={styles.otherInformations}>
         <TouchableOpacity style={styles.btMark}><Text>Marcar</Text></TouchableOpacity>
       </View>
-
+      
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#9370DB",
+    flex: 1,  
     alignItems: "center",
+    
 
   },
   userInformations: {
     width: "95%",
 
-    height: "20%",
+    height: "15%",
     marginTop: 5,
     flexDirection: "row",
 
@@ -86,8 +91,9 @@ const styles = StyleSheet.create({
   choosesCalendar: {
     width: "95%",   
     
-    height: "60%",
+    height: "70%",
     marginTop: 5,
+    
 
 
 
@@ -99,6 +105,8 @@ const styles = StyleSheet.create({
   },
   txtService: {
     fontSize: 20,
+    color:'#7532a8',
+    fontWeight:'bold'
 
   },
   serviceScrowview: {
@@ -109,23 +117,26 @@ const styles = StyleSheet.create({
   services: {
     width: "100%",
 
-    borderWidth: 1,
+   
 
     height: 10,
-    borderColor: 'white'
+    borderColor: 'white',
+    backgroundColor:'red'
 
   },
   btServices: {
     width: 50,
     height: 50,
-    borderWidth: 1,
+    
     margin: 5,
-    borderRadius: 5,
-    backgroundColor:'white'
+    borderRadius: 20,
+    backgroundColor:'#9370DB',
+    justifyContent:'center',
+    alignItems:'center'
   },
   logoBtServices:{
-    width:45,
-    height:45
+    width:40,
+    height:40
   },
 
   otherInformations: {
@@ -134,7 +145,8 @@ const styles = StyleSheet.create({
     height: "10%",
     marginTop: 5,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+
   },
   btMark:{
     width: 200,
@@ -144,33 +156,35 @@ const styles = StyleSheet.create({
 
     justifyContent: 'center',
     alignItems: 'center',
-    color: "white",
+    backgroundColor:'#9370DB',
+    color:'#9370DB',
     borderRadius: 25,
   },
 
   Nome: {
-    width: "50%",
+    width: "40%",
     height: '100%',
-
     justifyContent: "center",
-    alignItems: 'center'
+    
+    
   },
   TxtNome: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 30,
-    padding: 10
+    fontSize: 20,
+    padding: 10,
+    color:'#7532a8'
   },
   Foto: {
-    width: "50%",
+    width: "60%",
     height: '100%',
 
     justifyContent: "center",
-    alignItems: 'center'
+    alignItems: 'flex-end'
   },
   FotoPerfil: {
-    width: 150,
-    height: 150,
+    width: 50,
+    height: 50,
     borderRadius: 40
   }
 
