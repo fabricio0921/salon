@@ -43,8 +43,7 @@ const AppCalendar = () => {
   return (
     <Calendar
     style={{
-        borderWidth: 1,
-        borderColor: 'gray',
+        
         marginTop:5,
         borderRadius:10,
         
