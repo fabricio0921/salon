@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+
 import AppCalendar from '../../components/Calendar';
 import Hour from '../../components/Hour';
 
@@ -10,6 +11,8 @@ import Hour from '../../components/Hour';
 // import { Container } from './styles';
 
 const Salon = () => {
+  
+
   return (
 
     <View style={styles.container}>
@@ -39,25 +42,13 @@ const Salon = () => {
           /></TouchableOpacity>
           <TouchableOpacity style={styles.btServices}><Image
             style={styles.logoBtServices}
-            source={require('../../assets/manicure.png')}
+            source={require('../../assets/cortecabelo.png')}
           /></TouchableOpacity>
           <TouchableOpacity style={styles.btServices}><Image
             style={styles.logoBtServices}
-            source={require('../../assets/manicure.png')}
+            source={require('../../assets/massagem.png')}
           /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Image
-            style={styles.logoBtServices}
-            source={require('../../assets/manicure.png')}
-          /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Image
-            style={styles.logoBtServices}
-            source={require('../../assets/manicure.png')}
-          /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Image
-            style={styles.logoBtServices}
-            source={require('../../assets/manicure.png')}
-          /></TouchableOpacity>
-
+          
         </ScrollView>
         <AppCalendar/>
         <Hour/>
@@ -76,6 +67,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,  
     alignItems: "center",
+    backgroundColor:'#DCDCDC',
+    
+    
     
 
   },
@@ -91,7 +85,7 @@ const styles = StyleSheet.create({
   choosesCalendar: {
     width: "95%",   
     
-    height: "70%",
+    height: "75%",
     marginTop: 5,
     
 
@@ -101,7 +95,8 @@ const styles = StyleSheet.create({
   txtCalendar: {
     width: "100%",
 
-    height: "10%",
+    height: "8%",
+    
   },
   txtService: {
     fontSize: 20,
@@ -110,18 +105,14 @@ const styles = StyleSheet.create({
 
   },
   serviceScrowview: {
-    borderColor: 'red',
-    
+        
     flexGrow: 0
   },
   services: {
-    width: "100%",
-
-   
-
+    width: "100%",  
     height: 10,
     borderColor: 'white',
-    backgroundColor:'red'
+   
 
   },
   btServices: {
@@ -130,20 +121,19 @@ const styles = StyleSheet.create({
     
     margin: 5,
     borderRadius: 20,
-    backgroundColor:'#9370DB',
+    backgroundColor:'#efe9f5',
     justifyContent:'center',
     alignItems:'center'
   },
   logoBtServices:{
     width:40,
-    height:40
+    height:40,
+  
   },
 
   otherInformations: {
-    width: "95%",
-    
+    width: "100%",    
     height: "10%",
-    marginTop: 5,
     justifyContent:'center',
     alignItems:'center',
 
@@ -157,7 +147,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor:'#9370DB',
-    color:'#9370DB',
     borderRadius: 25,
   },
 
@@ -171,16 +160,14 @@ const styles = StyleSheet.create({
   TxtNome: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20,
-    padding: 10,
+    fontSize: 20,    
     color:'#7532a8'
   },
   Foto: {
-    width: "60%",
+    width: "80%",
     height: '100%',
-
     justifyContent: "center",
-    alignItems: 'flex-end'
+    alignItems: "center"
   },
   FotoPerfil: {
     width: 50,

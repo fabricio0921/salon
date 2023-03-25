@@ -48,9 +48,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "white",
+        width:"100%",
         
-        margin:5,
-        borderRadius:5,
+        marginTop:5,
+        borderRadius:10,
        
         alignItems:'center'
        
