@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView} from 'react-native';
 
 
@@ -8,6 +8,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView} from 'reac
 // import { Container } from './styles';
 
 const Hour = () => {
+
     return (
         <View style={styles.container}>
             <ScrollView 

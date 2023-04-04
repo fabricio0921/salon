@@ -11,8 +11,11 @@ import Hour from '../../components/Hour';
 // import { Container } from './styles';
 
 const Salon = () => {
+  const [cor, setCor] = useState("#efe9f5")
   
 
+  
+  
   return (
 
     <View style={styles.container}>
@@ -21,6 +24,7 @@ const Salon = () => {
         <View style={styles.Nome}>
           <Text style={styles.TxtNome}>Olá, Fabrício </Text>
         </View>
+       
         <View style={styles.Foto}>
           <Image
             style={styles.FotoPerfil}
@@ -36,7 +40,7 @@ const Salon = () => {
           <Text style={styles.txtService}>Escolha seu Serviço</Text>
         </View>
         <ScrollView style={styles.serviceScrowview} horizontal>
-          <TouchableOpacity style={styles.btServices}><Image
+          <TouchableOpacity style={[styles.btServices, {backgroundColor:`${cor}`}]} onPress={()=>setCor('#eb7a34')}><Image
             style={styles.logoBtServices}
             source={require('../../assets/manicure.png')}
           /></TouchableOpacity>
@@ -121,7 +125,7 @@ const styles = StyleSheet.create({
     
     margin: 5,
     borderRadius: 20,
-    backgroundColor:'#efe9f5',
+    
     justifyContent:'center',
     alignItems:'center'
   },
