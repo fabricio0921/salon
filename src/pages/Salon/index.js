@@ -11,7 +11,7 @@ import Hour from '../../components/Hour';
 // import { Container } from './styles';
 
 const Salon = () => {
-  const [cor, setCor] = useState("#efe9f5")
+  const [cor, setCor] = useState("#efe9f5");
   
 
   
@@ -40,7 +40,7 @@ const Salon = () => {
           <Text style={styles.txtService}>Escolha seu Serviço</Text>
         </View>
         <ScrollView style={styles.serviceScrowview} horizontal>
-          <TouchableOpacity style={[styles.btServices, {backgroundColor:`${cor}`}]} onPress={()=>setCor('#eb7a34')}><Image
+          <TouchableOpacity style={[styles.btServices, {backgroundColor:`${cor}`}]} onPress={()=>setCor("#E8C9F5")}><Image
             style={styles.logoBtServices}
             source={require('../../assets/manicure.png')}
           /></TouchableOpacity>
@@ -55,7 +55,7 @@ const Salon = () => {
           
         </ScrollView>
         <AppCalendar/>
-        <Hour/>
+        <Hour />
         
       </View>
 

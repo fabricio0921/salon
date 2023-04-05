@@ -8,6 +8,9 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView} from 'reac
 // import { Container } from './styles';
 
 const Hour = () => {
+const [corHour, setCorHour] = useState("#E8C9F5")
+
+
 
     return (
         <View style={styles.container}>
@@ -18,7 +21,7 @@ const Hour = () => {
                 alignItems:'center'
               }}
              horizontal>
-            <TouchableOpacity style={styles.bHour}><Text>10:30</Text></TouchableOpacity>
+            <TouchableOpacity style={[styles.bHour, { backgroundColor:`${corHour}`}]} onPress={()=>setCorHour("#DCC9F5")} ><Text>10:30</Text></TouchableOpacity>
             <TouchableOpacity style={styles.bHour}><Text>10:30</Text></TouchableOpacity>
             <TouchableOpacity style={styles.bHour}><Text>10:30</Text></TouchableOpacity>
             <TouchableOpacity style={styles.bHour}><Text>10:30</Text></TouchableOpacity>
@@ -43,7 +46,7 @@ const Hour = () => {
     );
 }
 
-export default Hour;
+
 
 const styles = StyleSheet.create({
     container: {
@@ -60,10 +63,9 @@ const styles = StyleSheet.create({
     
     bHour:{
         width:"10%",
-        height:"50%",
-        
-        backgroundColor:'#efe9f5',
+        height:"50%",       
         borderRadius:5,
+       
         justifyContent:'center',
         alignItems:'center',
         margin:5
@@ -72,3 +74,4 @@ const styles = StyleSheet.create({
 
 });
 
+export default Hour;
