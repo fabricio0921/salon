@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 import AppCalendar from '../../components/Calendar';
@@ -12,19 +12,32 @@ import Hour from '../../components/Hour';
 
 const Salon = () => {
   const [cor, setCor] = useState("#efe9f5");
+  const [value, setValue] = useState(0);
   
-
   
   
+  function Handle() {
+    if(value===1){
+      setCor("#E8C9F5");
+      setValue(0);
+      
+     }else if(value !== 1){
+      setCor("#efe9f5");
+      setValue(1)
+      
+     }
+    console.log(value);
+  }
+ 
   return (
 
     <View style={styles.container}>
-       
+
       <View style={styles.userInformations}>
         <View style={styles.Nome}>
           <Text style={styles.TxtNome}>Olá, Fabrício </Text>
         </View>
-       
+
         <View style={styles.Foto}>
           <Image
             style={styles.FotoPerfil}
@@ -40,41 +53,39 @@ const Salon = () => {
           <Text style={styles.txtService}>Escolha seu Serviço</Text>
         </View>
         <ScrollView style={styles.serviceScrowview} horizontal>
-          <TouchableOpacity style={[styles.btServices, {backgroundColor:`${cor}`}]} onPress={()=>setCor("#E8C9F5")}><Image
+          <TouchableOpacity style={[styles.btServices, { backgroundColor: `${cor}` }]} onPress={() => Handle()}><Image
             style={styles.logoBtServices}
             source={require('../../assets/manicure.png')}
           /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Image
+          <TouchableOpacity style={[styles.btServices, { backgroundColor: `${cor}` }]} onPress={() => setCor("#E8C9F5")}><Image
             style={styles.logoBtServices}
             source={require('../../assets/cortecabelo.png')}
           /></TouchableOpacity>
-          <TouchableOpacity style={styles.btServices}><Image
+          <TouchableOpacity style={[styles.btServices, { backgroundColor: `${cor}` }]} onPress={() => setCor("#E8C9F5")}><Image
             style={styles.logoBtServices}
             source={require('../../assets/massagem.png')}
           /></TouchableOpacity>
-          
+
         </ScrollView>
-        <AppCalendar/>
+        <AppCalendar />
         <Hour />
-        
+
       </View>
 
 
       <View style={styles.otherInformations}>
         <TouchableOpacity style={styles.btMark}><Text>Marcar</Text></TouchableOpacity>
       </View>
-      
+
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,  
+    flex: 1,
     alignItems: "center",
-    backgroundColor:'#DCDCDC',
-    
-    
-    
+    backgroundColor: '#DCDCDC',
+
 
   },
   userInformations: {
@@ -87,11 +98,11 @@ const styles = StyleSheet.create({
 
   },
   choosesCalendar: {
-    width: "95%",   
-    
+    width: "95%",
+
     height: "75%",
     marginTop: 5,
-    
+
 
 
 
@@ -100,49 +111,49 @@ const styles = StyleSheet.create({
     width: "100%",
 
     height: "8%",
-    
+
   },
   txtService: {
     fontSize: 20,
-    color:'#7532a8',
-    fontWeight:'bold'
+    color: '#7532a8',
+    fontWeight: 'bold'
 
   },
   serviceScrowview: {
-        
+
     flexGrow: 0
   },
   services: {
-    width: "100%",  
+    width: "100%",
     height: 10,
     borderColor: 'white',
-   
+
 
   },
   btServices: {
     width: 50,
     height: 50,
-    
+
     margin: 5,
     borderRadius: 20,
-    
-    justifyContent:'center',
-    alignItems:'center'
+
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  logoBtServices:{
-    width:40,
-    height:40,
-  
+  logoBtServices: {
+    width: 40,
+    height: 40,
+
   },
 
   otherInformations: {
-    width: "100%",    
+    width: "100%",
     height: "10%",
-    justifyContent:'center',
-    alignItems:'center',
+    justifyContent: 'center',
+    alignItems: 'center',
 
   },
-  btMark:{
+  btMark: {
     width: 200,
     height: "60%",
     borderWidth: 1,
@@ -150,7 +161,7 @@ const styles = StyleSheet.create({
 
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#9370DB',
+    backgroundColor: '#9370DB',
     borderRadius: 25,
   },
 
@@ -158,14 +169,14 @@ const styles = StyleSheet.create({
     width: "40%",
     height: '100%',
     justifyContent: "center",
-    
-    
+
+
   },
   TxtNome: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20,    
-    color:'#7532a8'
+    fontSize: 20,
+    color: '#7532a8'
   },
   Foto: {
     width: "80%",

@@ -64,10 +64,9 @@ const styles = StyleSheet.create({
     bHour:{
         width:"10%",
         height:"50%",       
-        borderRadius:5,
-       
-        justifyContent:'center',
-        alignItems:'center',
+        borderRadius:5,       
+        justifyContent:"center",
+        alignItems:"center",
         margin:5
     }
    
